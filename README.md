@@ -1,4 +1,4 @@
-# SkyLux Airlines ✈️
+# SkyLux Airlines 
 
 A full-stack airline booking and management platform built with **React** (frontend) and **FastAPI + MySQL** (backend).
 
