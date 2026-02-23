@@ -3,51 +3,57 @@
 export const destinations = [
   {
     id: 1,
-    city: "Paris",
-    country: "France",
-    image: "https://images.pexels.com/photos/4310975/pexels-photo-4310975.jpeg",
-    price: 899,
-    description: "Experience the city of lights and romance"
+    city: "New York",
+    code: "JFK",
+    country: "USA",
+    image: "https://images.pexels.com/photos/2190283/pexels-photo-2190283.jpeg",
+    price: 799,
+    description: "Experience the pulse of the world's most iconic skyline."
   },
   {
     id: 2,
-    city: "Dubai",
-    country: "UAE",
-    image: "https://images.pexels.com/photos/29470839/pexels-photo-29470839.jpeg",
-    price: 1299,
-    description: "Luxury shopping and modern architecture"
+    city: "London",
+    code: "LHR",
+    country: "UK",
+    image: "https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg",
+    price: 849,
+    description: "Historic charm meets modern elegance in the heart of Britain."
   },
   {
     id: 3,
-    city: "Tokyo",
-    country: "Japan",
-    image: "https://images.pexels.com/photos/31258209/pexels-photo-31258209.jpeg",
-    price: 1499,
-    description: "Blend of tradition and innovation"
+    city: "Dubai",
+    code: "DXB",
+    country: "UAE",
+    image: "https://images.pexels.com/photos/2047333/pexels-photo-2047333.jpeg",
+    price: 1299,
+    description: "Luxury shopping, desert adventures, and gravity-defying architecture."
   },
   {
     id: 4,
-    city: "New York",
-    country: "USA",
-    image: "https://images.pexels.com/photos/33987758/pexels-photo-33987758.jpeg",
-    price: 799,
-    description: "The city that never sleeps"
+    city: "Paris",
+    code: "CDG",
+    country: "France",
+    image: "https://images.pexels.com/photos/4310975/pexels-photo-4310975.jpeg",
+    price: 899,
+    description: "The city of lights, world-class art, and culinary perfection."
   },
   {
     id: 5,
-    city: "Maldives",
-    country: "Maldives",
-    image: "https://images.pexels.com/photos/28843931/pexels-photo-28843931.jpeg",
-    price: 1899,
-    description: "Paradise islands and crystal waters"
+    city: "Singapore",
+    code: "SIN",
+    country: "Singapore",
+    image: "https://images.pexels.com/photos/777059/pexels-photo-777059.jpeg",
+    price: 1199,
+    description: "A tropical garden city where futuristic skylines meet nature."
   },
   {
     id: 6,
-    city: "Singapore",
-    country: "Singapore",
-    image: "https://images.unsplash.com/photo-1472148439583-1f4cf81b80e0",
-    price: 1199,
-    description: "Modern city-state with vibrant culture"
+    city: "Tokyo",
+    code: "NRT",
+    country: "Japan",
+    image: "https://images.pexels.com/photos/161401/pexels-photo-161401.jpeg",
+    price: 1499,
+    description: "Vibrant neon lights and centuries-old traditions in perfect harmony."
   }
 ];
 

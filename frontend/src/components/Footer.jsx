@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Plane, Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
@@ -11,40 +12,25 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Section */}
           <div className="space-y-6">
-            <div className="flex items-center gap-3">
+            <Link to="/" className="flex items-center gap-3">
               <div className="w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center">
                 <Plane className="h-6 w-6 text-slate-900" />
               </div>
               <span className="text-2xl font-bold text-white">SkyLux</span>
-            </div>
+            </Link>
             <p className="text-slate-400 leading-relaxed">
               Experience luxury travel at its finest. Your journey begins with us.
             </p>
             <div className="flex gap-4">
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-amber-500 hover:text-slate-900 transition-all duration-300"
-              >
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-amber-500 hover:text-slate-900 transition-all duration-300"
-              >
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-amber-500 hover:text-slate-900 transition-all duration-300"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-amber-500 hover:text-slate-900 transition-all duration-300"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
+              {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
+                <a
+                  key={i}
+                  href="#"
+                  className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-amber-500 hover:text-slate-900 transition-all duration-300"
+                >
+                  <Icon className="h-5 w-5" />
+                </a>
+              ))}
             </div>
           </div>
 
@@ -52,14 +38,20 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-bold text-lg mb-6">Quick Links</h3>
             <ul className="space-y-3">
-              {['Book a Flight', 'Manage Booking', 'Flight Status', 'Travel Information', 'Special Offers'].map((link) => (
-                <li key={link}>
-                  <a
-                    href="#"
+              {[
+                { label: 'Book a Flight', to: '/#flight-search' },
+                { label: 'My Bookings', to: '/my-bookings' },
+                { label: 'Special Offers', to: '/special-offers' },
+                { label: 'Destinations', to: '/#destinations' },
+                { label: 'About Us', to: '/about' },
+              ].map(({ label, to }) => (
+                <li key={label}>
+                  <Link
+                    to={to}
                     className="text-slate-400 hover:text-amber-500 transition-colors duration-300 inline-block hover:translate-x-1"
                   >
-                    {link}
-                  </a>
+                    {label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -69,14 +61,20 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-bold text-lg mb-6">Support</h3>
             <ul className="space-y-3">
-              {['Help Center', 'Contact Us', 'FAQ', 'Terms & Conditions', 'Privacy Policy'].map((link) => (
-                <li key={link}>
-                  <a
-                    href="#"
+              {[
+                { label: 'Help Center', to: '/help' },
+                { label: 'Contact Us', to: '/contact' },
+                { label: 'FAQ', to: '/faq' },
+                { label: 'Terms & Conditions', to: '/terms' },
+                { label: 'Privacy Policy', to: '/privacy' },
+              ].map(({ label, to }) => (
+                <li key={label}>
+                  <Link
+                    to={to}
                     className="text-slate-400 hover:text-amber-500 transition-colors duration-300 inline-block hover:translate-x-1"
                   >
-                    {link}
-                  </a>
+                    {label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -118,15 +116,15 @@ const Footer = () => {
               © {currentYear} SkyLux Airlines. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
-              <a href="#" className="text-slate-400 hover:text-amber-500 transition-colors duration-300">
+              <Link to="/privacy" className="text-slate-400 hover:text-amber-500 transition-colors duration-300">
                 Privacy Policy
-              </a>
-              <a href="#" className="text-slate-400 hover:text-amber-500 transition-colors duration-300">
+              </Link>
+              <Link to="/terms" className="text-slate-400 hover:text-amber-500 transition-colors duration-300">
                 Terms of Service
-              </a>
-              <a href="#" className="text-slate-400 hover:text-amber-500 transition-colors duration-300">
-                Cookie Policy
-              </a>
+              </Link>
+              <Link to="/help" className="text-slate-400 hover:text-amber-500 transition-colors duration-300">
+                Help Center
+              </Link>
             </div>
           </div>
         </div>
