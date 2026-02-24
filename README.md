@@ -42,6 +42,8 @@ A full-stack airline booking and management platform built with **React** (front
 
 ```bash
 docker-compose up -d
+
+
 ```
 To get start the mysql query in terminal 
 ```bash
@@ -49,14 +51,15 @@ docker exec -it airline-main-db-1 mysql -u root -p airline_db
 ```
 
 
-
 ### 2. Set Up Backend
 
 ```bash
 cd backend
 python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
+source .venv/bin/activate        
 pip install -r requirements.txt
+
+# Windows: .venv\Scripts\activate
 ```
 
 Create `backend/.env`:

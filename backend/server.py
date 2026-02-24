@@ -1,5 +1,6 @@
 from fastapi import FastAPI, APIRouter, Depends, HTTPException
-from starlette.middleware.cors import CORSMiddleware
+from fastapi.middleware.cors import CORSMiddleware
+from mangum import Mangum
 from sqlalchemy.orm import Session
 from sqlalchemy import text
 import os
@@ -61,8 +62,6 @@ async def health_check(db: Session = Depends(get_db)):
 def get_airports(db: Session = Depends(get_db)):
     """Fetch all airports."""
     return db.query(models.Airport).all()
-
-from datetime import datetime, timedelta
 
 @api_router.get("/flights/search")
 def search_flights(
@@ -320,7 +319,10 @@ def get_user_bookings(user_id: int, db: Session = Depends(get_db)):
 # Include the routers in the main app
 app.include_router(api_router)
 app.include_router(admin_public_router)   # login (no auth)
-app.include_router(admin_router)          # protected metrics
+app.include_router(admin_router, prefix="/api/admin", tags=["Admin Metrics"])
+
+# AWS Lambda Handler
+handler = Mangum(app)
 
 if __name__ == "__main__":
     uvicorn.run("server:app", host="0.0.0.0", port=8000, reload=True)
