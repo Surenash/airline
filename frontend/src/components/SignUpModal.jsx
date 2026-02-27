@@ -18,17 +18,9 @@ const SignUpModal = ({ isOpen, onOpenChange }) => {
             return;
         }
 
-        // --- Authentication & Security Enhancements ---
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (!emailRegex.test(email)) {
             toast.error('Invalid email format. Please enter a valid email address.');
-            return;
-        }
-
-        const trustedDomains = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'icloud.com', 'skylux.com'];
-        const domain = email.split('@')[1].toLowerCase();
-        if (!trustedDomains.includes(domain)) {
-            toast.error('Email domain is not trusted. Please use a reputable provider.');
             return;
         }
         // ---------------------------------------------
