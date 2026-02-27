@@ -49,6 +49,9 @@ export default function AdminLoginPage() {
                     </div>
                     <h1 className="admin-login-title">SkyLux Management</h1>
                     <p className="admin-login-subtitle">Admin Portal — Sign in to continue</p>
+                    <div style={{ background: '#f8d7da', color: '#721c24', padding: '5px', borderRadius: '4px', fontSize: '10px', marginTop: '5px' }}>
+                        VERSION: FIX_LOGIN_V2
+                    </div>
                 </div>
 
 
