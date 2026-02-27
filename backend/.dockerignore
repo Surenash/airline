@@ -1,0 +1,10 @@
+__pycache__/
+.venv/
+.git/
+.env
+*.pyc
+*.pyo
+*.pyd
+.db
+db_data/
+node_modules/
