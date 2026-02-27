@@ -50,11 +50,7 @@ export default function AdminLoginPage() {
                     <p className="admin-login-subtitle">Admin Portal — Sign in to continue</p>
                 </div>
 
-                {/* Dev credentials hint */}
-                <div style={{ background: '#1a2332', border: '1px solid #30363d', borderRadius: 8, padding: '10px 14px', marginBottom: 8, fontSize: 12, color: '#8b949e', textAlign: 'center' }}>
-                    <strong style={{ color: '#58a6ff' }}>Dev Login:</strong> &nbsp;
-                    <code style={{ color: '#e6edf3' }}>admin</code> / <code style={{ color: '#e6edf3' }}>admin123</code>
-                </div>
+
 
                 {/* Error */}
                 {error && (
